@@ -22,6 +22,17 @@ function updateTime() {
       "h:mm:ss [<small>]A[</small>]"
     );
   }
+  let pragueElement = document.querySelector("#prague");
+  if (pragueElement) {
+    let pragueDateElement = pragueElement.querySelector(".date");
+    let pragueTimeElement = pragueElement.querySelector(".time");
+    let pragueTime = moment().tz("Europe/Prague");
+
+    pragueDateElement.innerHTML = pragueTime.format("MMMM	Do YYYY");
+    pragueTimeElement.innerHTML = pragueTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
 }
 
 function updateCity(event) {
